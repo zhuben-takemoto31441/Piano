@@ -1,0 +1,56 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #143F6B;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.piano {
+  display: flex;
+}
+
+.key {
+  height: calc(var(--width) * 4);
+  width: var(--width);
+}
+
+.white {
+  --width: 100px;
+  background-color: white;
+  border: 1px solid #333;
+}
+
+.white.active {
+  background-color: #CCC;
+}
+
+.black {
+  --width: 60px;
+  background-color: black;
+  margin-left: calc(var(--width) / -2);
+  margin-right: calc(var(--width) / -2);
+  z-index: 2;
+}
+
+.black.active {
+  background-color: #333;
+}
+
+ 
+ 	
+.finger {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #ff0000; /* 手指頭的顏色 */
+  border-radius: 50%; /* 圓形手指頭 */
+  display: none; /* 初始時隱藏手指頭 */
+  transition: opacity 0.5s; /* 0.5秒的淡入淡出效果 */
+}
+
